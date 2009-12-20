@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+		  "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<bean name="urlMappings" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/admin.html">adminController</prop>
+				
+				<prop key="/admin/developers.html">developerController</prop>
+				<prop key="/admin/downloads.html">downloadController</prop>
+				<prop key="/admin/pages.html">pageController</prop>
+				<prop key="/admin/projects.html">projectController</prop>
+				<prop key="/admin/templates.html">templateController</prop>
+				<prop key="/admin/setDefaultTemplate.html">defaultTemplateController</prop>
+				
+				<prop key="/viewPage.voyage">viewVoyagePage</prop>
+				<prop key="/viewProjectHome.voyage">viewVoyageProject</prop>
+				<prop key="/viewDeveloperHome.voyage">viewVoyageDeveloper</prop>
+
+				<!-- For all other URIs that do not match, forward the user to a generic Page Not Found page. -->
+        		<prop key="/**">pageNotFoundController</prop>
+			</props>
+		</property>
+	</bean>
+		
+</beans>

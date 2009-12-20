@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+		  "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<!-- Generic request mapper -->
+	
+	<bean name="pageNotFoundController" class="org.myjerry.voyage.web.controller.PageNotFoundController" >
+		<property name="requestService" ref="requestService" />
+	</bean>
+	
+	<!-- Administrator home page -->
+	
+	<bean name="adminController" class="org.myjerry.voyage.web.admin.AdminController" >
+		<property name="methodNameResolver" ref="parameterMethodNameResolverWithDefaultMethod" />
+	</bean>
+	
+	<bean name="developerController" class="org.myjerry.voyage.web.admin.DeveloperController" >
+		<property name="methodNameResolver" ref="parameterMethodNameResolverWithDefaultMethod" />
+		<property name="developerService" ref="developerService" />
+	</bean>
+	
+	<bean name="downloadController" class="org.myjerry.voyage.web.admin.DownloadController" >
+		<property name="methodNameResolver" ref="parameterMethodNameResolverWithDefaultMethod" />
+		<property name="downloadService" ref="downloadService" />
+	</bean>
+	
+	<bean name="pageController" class="org.myjerry.voyage.web.admin.PageController" >
+		<property name="methodNameResolver" ref="parameterMethodNameResolverWithDefaultMethod" />
+		<property name="pageService" ref="pageService" />
+	</bean>
+	
+	<bean name="projectController" class="org.myjerry.voyage.web.admin.ProjectController" >
+		<property name="methodNameResolver" ref="parameterMethodNameResolverWithDefaultMethod" />
+		<property name="projectService" ref="projectService" />
+	</bean>
+	
+	<bean name="templateController" class="org.myjerry.voyage.web.admin.TemplateController" >
+		<property name="methodNameResolver" ref="parameterMethodNameResolverWithDefaultMethod" />
+		<property name="templateService" ref="templateService" />
+	</bean>
+	
+	<bean name="defaultTemplateController" class="org.myjerry.voyage.web.admin.DefaultTemplateController">
+		<property name="methodNameResolver" ref="parameterMethodNameResolverWithDefaultMethod" />
+		<property name="templateService" ref="templateService" />
+	</bean>
+	
+	<!-- Voyage pages -->
+	
+	<bean name="viewVoyagePage" class="org.myjerry.voyage.web.voyage.ViewPageController">
+		<property name="methodNameResolver" ref="parameterMethodNameResolverWithDefaultMethod" />
+		<property name="velocityEngine" ref="velocityEngine" />
+		<property name="pageService" ref="pageService" />
+		<property name="projectService" ref="projectService" />
+		<property name="templateService" ref="templateService" />
+		<property name="developerService" ref="developerService" />
+	</bean>
+	
+	<bean name="viewVoyageProject" class="org.myjerry.voyage.web.voyage.ViewProjectController">
+		<property name="methodNameResolver" ref="parameterMethodNameResolverWithDefaultMethod" />
+		<property name="velocityEngine" ref="velocityEngine" />
+		<property name="projectService" ref="projectService" />
+		<property name="templateService" ref="templateService" />
+	</bean>
+
+	<bean name="viewVoyageDeveloper" class="org.myjerry.voyage.web.voyage.ViewDeveloperController">
+		<property name="methodNameResolver" ref="parameterMethodNameResolverWithDefaultMethod" />
+		<property name="velocityEngine" ref="velocityEngine" />
+		<property name="developerService" ref="developerService" />
+		<property name="templateService" ref="templateService" />
+	</bean>
+	
+</beans>

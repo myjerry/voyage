@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+		  "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<bean name="developerService" class="org.myjerry.voyage.service.impl.gae.DeveloperServiceImpl" />
+	
+	<bean name="downloadService" class="org.myjerry.voyage.service.impl.gae.DownloadServiceImpl" />
+	
+	<bean name="pageService" class="org.myjerry.voyage.service.impl.gae.PageServiceImpl" />
+	
+	<bean name="projectService" class="org.myjerry.voyage.service.impl.gae.ProjectServiceImpl" />
+	
+	<bean name="templateService" class="org.myjerry.voyage.service.impl.gae.TemplateServiceImpl" />
+	
+	<bean name="requestService" class="org.myjerry.voyage.service.impl.gae.RequestServiceImpl">
+		<property name="pageService" ref="pageService" />
+		<property name="projectService" ref="projectService" />
+		<property name="developerService" ref="developerService" />
+	</bean>
+
+	<bean name="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean" >
+		<property name="preferFileSystemAccess" value="false" />
+	</bean>
+		
+</beans>

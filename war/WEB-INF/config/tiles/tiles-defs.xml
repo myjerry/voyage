@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC 
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name=".masterLayout" template="/WEB-INF/jsps/templates/master.jsp">
+		<put-attribute name="title" value="myJerry Voyage" />
+		<put-attribute name="body" value="/WEB-INF/jsps/templates/blank.jsp" />
+	</definition>
+	
+	<definition name=".admin" extends=".masterLayout">
+		<put-attribute name="title" value="Admin"/>
+		<put-attribute name="body" value="/WEB-INF/jsps/admin/admin.jsp" />
+	</definition>
+
+	<!-- Pages -->
+
+	<definition name=".admin.pages" extends=".masterLayout">
+		<put-attribute name="title" value="Admin"/>
+		<put-attribute name="body" value="/WEB-INF/jsps/admin/page/iteratePages.jsp" />
+	</definition>
+
+	<definition name=".admin.pages.delete" extends=".masterLayout">
+		<put-attribute name="title" value="Admin"/>
+		<put-attribute name="body" value="/WEB-INF/jsps/admin/page/deletePage.jsp" />
+	</definition>
+
+	<definition name=".admin.pages.add" extends=".masterLayout">
+		<put-attribute name="title" value="Admin"/>
+		<put-attribute name="body" value="/WEB-INF/jsps/admin/page/addPage.jsp" />
+	</definition>
+	
+	<!-- Downloads -->
+	
+	<definition name=".admin.downloads" extends=".masterLayout">
+		<put-attribute name="title" value="Admin"/>
+		<put-attribute name="body" value="/WEB-INF/jsps/admin/download/iterateDownloads.jsp" />
+	</definition>
+
+	<definition name=".admin.downloads.add" extends=".masterLayout">
+		<put-attribute name="title" value="Admin"/>
+		<put-attribute name="body" value="/WEB-INF/jsps/admin/download/addDownload.jsp" />
+	</definition>
+
+	<definition name=".admin.downloads.delete" extends=".masterLayout">
+		<put-attribute name="title" value="Admin"/>
+		<put-attribute name="body" value="/WEB-INF/jsps/admin/download/deleteDownload.jsp" />
+	</definition>
+
+	<!-- Developers -->
+
+	<definition name=".admin.developers" extends=".masterLayout">
+		<put-attribute name="title" value="Admin"/>
+		<put-attribute name="body" value="/WEB-INF/jsps/admin/developer/iterateDevelopers.jsp" />
+	</definition>
+
+
+	<definition name=".admin.developers.add" extends=".masterLayout">
+		<put-attribute name="title" value="Admin"/>
+		<put-attribute name="body" value="/WEB-INF/jsps/admin/developer/addDeveloper.jsp" />
+	</definition>
+
+	<definition name=".admin.developers.delete" extends=".masterLayout">
+		<put-attribute name="title" value="Admin"/>
+		<put-attribute name="body" value="/WEB-INF/jsps/admin/developer/deleteDeveloper.jsp" />
+	</definition>
+
+	<!-- Projects -->
+
+	<definition name=".admin.projects" extends=".masterLayout">
+		<put-attribute name="title" value="Admin"/>
+		<put-attribute name="body" value="/WEB-INF/jsps/admin/project/iterateProjects.jsp" />
+	</definition>
+
+	<definition name=".admin.projects.add" extends=".masterLayout">
+		<put-attribute name="title" value="Admin"/>
+		<put-attribute name="body" value="/WEB-INF/jsps/admin/project/addProject.jsp" />
+	</definition>
+
+	<definition name=".admin.projects.delete" extends=".masterLayout">
+		<put-attribute name="title" value="Admin"/>
+		<put-attribute name="body" value="/WEB-INF/jsps/admin/project/deleteProject.jsp" />
+	</definition>
+
+	<!-- Templates -->
+
+	<definition name=".admin.templates" extends=".masterLayout">
+		<put-attribute name="title" value="Admin"/>
+		<put-attribute name="body" value="/WEB-INF/jsps/admin/template/iterateTemplates.jsp" />
+	</definition>
+
+	<definition name=".admin.templates.add" extends=".masterLayout">
+		<put-attribute name="title" value="Admin"/>
+		<put-attribute name="body" value="/WEB-INF/jsps/admin/template/addTemplate.jsp" />
+	</definition>
+
+	<definition name=".admin.templates.delete" extends=".masterLayout">
+		<put-attribute name="title" value="Admin"/>
+		<put-attribute name="body" value="/WEB-INF/jsps/admin/template/deleteTemplate.jsp" />
+	</definition>
+
+	<!-- The page not found handler -->
+
+	<definition name=".page.not.found" extends=".masterLayout">
+		<put-attribute name="title" value="Requested page not found"/>
+		<put-attribute name="body" value="/WEB-INF/jsps/pageNotFound.jsp" />
+	</definition>
+
+</tiles-definitions>
